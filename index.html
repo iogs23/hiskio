@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hiskio</title>
+    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script> 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
@@ -37,22 +38,20 @@
         </div>
     </div>
     <script>
-        var app = document.getElementById('app');
-        var menu = document.getElementsByClassName('menu')[0];
-        var menuBtn = document.getElementsByClassName('menuBtn')[0];
-        var clickWatch = document.getElementsByClassName('clickWatch')[0];
-        
-        menuBtn.addEventListener('click', function(){
-            app.classList.toggle('open');
-        });
+        $(function(){
+          $('.menuBtn').on('click', function(){
+            $('#app').toggleClass('open');
+          })
 
-        clickWatch.addEventListener('click', function(){            
-            
-            if(app.classList.contains('open') === false ){
-                window.open('https://hiskio.com/professions/1');
+          $('.clickWatch').on('click', function(){
+            if($('#app').hasClass('open') === false){
+              window.open('https://hiskio.com/professions/1');
             }
-           
-        });
+          })
+
+        })        
+
+        
 
     </script>
 </body>
